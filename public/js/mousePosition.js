@@ -31,6 +31,8 @@ object.onmousemove = function(){
     object.style.cursor='e-resize';
   if(y > object.offsetHeight - 4)//position et cursor a modifier en fonction de la position
     object.style.cursor='n-resize';
+if (x=posklex and y=poskley)
+    object.style.cursor=cursor1
 
  }
 </script>  
