@@ -4,6 +4,8 @@ var object = document.getElementById("object");
 
 var xMousePos = 0;
 var yMousePos = 0;
+var posklex=10;
+var poskley=10;
 document.onmousemove = function(e)
 {
   xMousePos = e.clientX + window.pageXOffset;
