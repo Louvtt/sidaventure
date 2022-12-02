@@ -11,7 +11,7 @@ var poskley=10;
 document.onmousemove = calculateMouseDelta;
 
 function calculateMouseDelta(e) {
-  mousePos.last.push({ ...mousePos.current});
+  mousePos.last.push({ ...mousePos.current} );
   if(mousePos.last.length > 10) {
     for (let index = 0; index < Math.max(0, mousePos.last.length-10); index++) {
       mousePos.last.shift();      
