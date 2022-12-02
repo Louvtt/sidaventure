@@ -19,7 +19,7 @@
         "text": "Je vais te chercher un truc à boire? Tu prends quoi?",
         "speaker":"player",
         "text":"Choisis pour moi",
-        "next": "dialog2",
+        "next": "dialog3",
         "choices": [  
         ]
     }
