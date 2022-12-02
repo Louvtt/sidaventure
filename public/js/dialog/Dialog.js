@@ -1,6 +1,6 @@
 /** Dialog options */
 const DialogOpt = {
-    CharSpeed: 30, // ms
+    CharSpeed: 15, // ms
     Margin: .01, // %
     Height: .3, // %
     ChoiceHeight: 30, // px
@@ -30,7 +30,6 @@ class Dialog {
         this.charIdx  = 0;
 
         this.baseContainer = baseContainer;
-
         this._animate(baseContainer);
     }
 
@@ -40,7 +39,7 @@ class Dialog {
 
         this._draw(baseContainer);
 
-        if(this.charIdx < this.text.length) {
+        if(this.charIdx < this.text.length && !this.canGoToNext) {
             this.animationTimeout = setTimeout(() => { this._animate(baseContainer); }, DialogOpt.CharSpeed);
         } else {
             this.canGoToNext = true;
@@ -57,16 +56,15 @@ class Dialog {
 
         container.interactive = true;
         container.on("click", (e) => {
+            if(this.animationTimeout)
+                clearTimeout(this.animationTimeout);
+
             if(this.canGoToNext && this.choices.length == 0) { // go to next
                 DialogManager.getInstance().setCurrent(this.next);
             } else { // end animation
-                if(this.animationTimeout) {
-                    clearTimeout(this.animationTimeout);
-                }
                 this.onScreen = this.text;
-                this.charIdx  = this.text.length - 2;
+                this.charIdx  = this.text.length - 1;
                 this.canGoToNext = true;
-                this._draw(this.baseContainer);
             }
         });
 
@@ -79,12 +77,14 @@ class Dialog {
             window.innerHeight * DialogOpt.Height
         );
 
+        const dialogBoxWidth = window.innerWidth  * (1 - 10 * DialogOpt.Margin);
         const speakerText = new PIXI.Text(
             this.speaker,
             {
                 fontSize: 32,
                 fill: DialogOpt.SpeakerColor,
-                wordWrap: true
+                wordWrap: true,
+                wordWrapWidth: dialogBoxWidth
             }
         );
         speakerText.x = speakerText.y = 10;
@@ -96,7 +96,8 @@ class Dialog {
             {
                 fontSize: 24,
                 fill: DialogOpt.InnerTextColor,
-                wordWrap: true
+                wordWrap: true,
+                wordWrapWidth: dialogBoxWidth
             }
         );
         text.x = text.y = 80;
@@ -110,7 +111,8 @@ class Dialog {
                     {
                         fontSize: 20,
                         fill: DialogOpt.InnerTextColor,
-                        wordWrap: true
+                        wordWrap: true,
+                        wordWrapWidth: dialogBoxWidth
                     }
                 );
                 arrow.x = window.innerWidth * (1 - 2 * DialogOpt.Margin) - 20;
@@ -124,11 +126,12 @@ class Dialog {
                 for(let i = 0; i < this.choices.length; ++i) {
                     const optData = this.choices[this.choices.length - i - 1];
                     const optText = new PIXI.Text(
-                        " - " + (optData["text"] ?? i),
+                        " - " + optData.name,
                         {
                             fontSize: 20,
                             fill: DialogOpt.InnerTextColor,
-                            wordWrap: false
+                            wordWrap: false,
+                            wordWrapWidth: dialogBoxWidth
                         }
                     );
                     optY -= DialogOpt.ChoiceHeight;

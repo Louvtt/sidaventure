@@ -1,4 +1,5 @@
 {
+    "root": "dialog_debut",
     "dialog_debut": {
         "speaker": "sid",
         "text": "Salut, tu attends depuis longtemps",
@@ -20,13 +21,11 @@
         "next": "dialog3"
     },
     "dialog3": {
-        "haschoice":true,
         "speaker": "sid",
         "text": "t'as le choix entre un cocktail ou un jus de fruit",
         "choices": [
             { "name": "coktail", "next": "dialogcoktail_0" },
             { "name": "cho", "next": "dialogjus_0" }
-
         ]
     },
     "dialogcoktail_0": {
