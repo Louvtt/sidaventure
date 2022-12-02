@@ -4,9 +4,9 @@ class DialogManager {
         this.app = app;
 
         DialogManager.instance = this;
-        document.addEventListener("click", (e) => {
-            if(this.current) this.current.OnClick();
-        });
+
+        this.dialogContainer = new PIXI.Graphics();
+        this.app.stage.addChild(this.dialogContainer);
     }
     
     setCurrent(dialog) {
@@ -15,8 +15,9 @@ class DialogManager {
     }
 
     showDialog() {
+        this.dialogContainer.removeChildren();
         if(this.current)
-            this.current.show(this.app);
+            this.current.show(this.dialogContainer);
     }
 
     static getInstance() {

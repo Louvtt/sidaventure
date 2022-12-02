@@ -25,47 +25,50 @@ class Dialog {
         this.canGoToNext = false;
     }
 
-    show(app) {
+    show(baseContainer) {
         this.onScreen = "";
         this.charIdx  = 0;
 
-        this._animate(app);
+        this.baseContainer = baseContainer;
+
+        this._animate(baseContainer);
     }
 
-    _animate(app) {
+    _animate(baseContainer) {
         this.onScreen += this.text.charAt(this.charIdx);
         this.charIdx++;
 
-        this._draw(app);
+        this._draw(baseContainer);
 
         if(this.charIdx < this.text.length) {
-            this.animationTimeout = setTimeout(() => { this._animate(app); }, DialogOpt.CharSpeed);
+            this.animationTimeout = setTimeout(() => { this._animate(baseContainer); }, DialogOpt.CharSpeed);
         } else {
             this.canGoToNext = true;
-            this._draw(app);
+            this._draw(baseContainer);
         }
     }
 
-    OnClick() {
-        if(this.canGoToNext) { // go to next
-            DialogManager.getInstance().setCurrent(this.next);
-        } else { // end animation
-            if(this.animationTimeout) {
-                clearTimeout(this.animationTimeout);
-            }
-            this.onScreen = this.text;
-            this.charIdx  = this.text.length - 2;
-            this.canGoToNext = true;
-            this._draw(app);
-        }
-    }
-
-    _draw(app) {
+    _draw(baseContainer) {
         const container = new PIXI.Graphics();
         container.x = window.innerWidth  * DialogOpt.Margin;
         container.y = window.innerHeight * (1 - DialogOpt.Margin - DialogOpt.Height);
 
-        app.stage.addChild(container);
+        baseContainer.addChild(container);
+
+        container.interactive = true;
+        container.on("click", (e) => {
+            if(this.canGoToNext && this.choices.length == 0) { // go to next
+                DialogManager.getInstance().setCurrent(this.next);
+            } else { // end animation
+                if(this.animationTimeout) {
+                    clearTimeout(this.animationTimeout);
+                }
+                this.onScreen = this.text;
+                this.charIdx  = this.text.length - 2;
+                this.canGoToNext = true;
+                this._draw(this.baseContainer);
+            }
+        });
 
         // dialog box
         container.beginFill(DialogOpt.BackgroundColor);
