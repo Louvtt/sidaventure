@@ -1,0 +1,136 @@
+{
+    "root": "dialog_debut",
+    "dialog_debut": {
+        "speaker": "sid",
+        "text": "Salut, tu attends depuis longtemps?",
+        "next": "dialog2_0"
+    },
+    "dialog2_0": {
+        "speaker": "player",
+        "text": "“Bof, il semblerait qu’on m’ait posé un lapin“",
+        "next": "dialog2_1"
+    },
+    "dialog2_1": {
+        "speaker": "sid",
+        "text": "Je vais te chercher un truc à boire? Tu prends quoi?",
+        "next": "dialog2_2"
+    },
+    "dialog2_2": {
+        "speaker":"player",
+        "text":"Il y a quoi a boire?",
+        "next": "dialog3"
+    },
+    "dialog3": {
+        "speaker": "sid",
+        "text": "T'as le choix entre un cocktail ou un jus de fruit",
+        "choices": [
+            { "name": "coktail", "next": "dialogcoktail_0" },
+            { "name": "cho", "next": "dialogjus_0" }
+        ]
+    },
+    "dialogcoktail_0": {
+        "speaker":"narrateur",
+        "text": "Lui prendre un truc avec de l’alcool ça désinhibe, cette personne ne sera pas forcement consentente de se qui va suivre, peut-être que vous allez conclure quelque chose ce soir.",
+        "next": "dialogcoktail_1"
+    },
+    "dialogcoktail_1": {
+        "speaker": "sid",
+        "text": "Sex on the beach, le meilleur cocktail pour les âmes en peine",
+        "next": "dialogcoktail_2"
+    },
+    "dialogcoktail_2": {
+        "speaker":"player",
+        "text":"Hm, si tu le dis",
+        "next": "dialogcoktail_3"
+    },
+    "dialogcoktail_3": {
+        "speaker": "sid",
+        "text": "Allez, raconte moi tout",
+        "next": "eclipse_0"
+    },
+    "dialogjus_0": {
+        "speaker":"narrateur",
+        "text":"Lui prendre un jus de fruit, si cette personne veut parler elle le fera avec son plein consentement et meme si vous n'aviez pas l'intention d'aller plus loin tout sera clair dans vos esprit",
+        "next": "dialogjus_1"
+    },
+    "dialogjus_1": {
+        "speaker": "player",
+        "text": "Jus d'abricot, une petite pepite",
+        "next": "dialogjus_2"
+    },
+    "dialogjus_2": {
+        "speaker":"sid",
+        "text":"Merci c'est adorable",
+        "next": "dialogjus_3"
+    },
+    "dialogjus_3": {
+        "speaker": "player",
+        "text": "Alors, tu veux m'en parler??",
+        "next":"eclipse2_0"
+    },
+    "eclipse_0": {
+        "speaker": "player",
+        "text":"Éclipse temporelle, on voit désormais la lune et des étoiles à la fenêtre. le player a les joues roses, des bulles au dessus de la tête un peu pompette",
+        "next": "eclipse_1"
+    },
+    "eclipse_1": {
+        "speaker": "player",
+        "text": "“Pfiou, ça fait du bien de parler, merci c’est sympa”",
+        "choices":[
+            { "name": "chez moi", "next": "dialogA" },
+            { "name": "je te racompagne", "next": "dialogB" },
+            { "name": "je te laisse rentre", "next": "dialogC" }
+        ]
+    },
+    "eclipse2_0": {
+        "speaker": "sid",
+        "text":"Éclipse temporelle, on voit désormais la lune et des étoiles à la fenêtre.",
+        "next": "eclipse2_1"
+    },
+    "eclipse2_1": {
+        "speaker": "sid",
+        "text": "“Ca fait du bien de parler, merci c’est sympa”",
+        "choices":[
+            { "name": "chez moi", "next": "dialogA" },
+            { "name": "je te racompagne", "next": "dialogB" },
+            { "name": "je te laisse rentre", "next": "dialog" }
+        ]
+    },
+    "dialogA": {
+        "speaker": "sid",
+        "text": "",
+        "next": "dialogA_1"
+    },
+    "dialogA_1": {
+        "speaker": "sid",
+        "text": "On vas chez moi? ",
+        "next": "dialogA_2"
+    },
+    "dialogA_2": {
+        "speaker":"player",
+        "text":"Okey, t'as un matelas de libre?",
+        "choices":[
+            { "name": "canapé", "next": "dialogA_Canap"},
+            { "name": "le lit est grand", "next": "dialogA_Lit"}
+        ]
+    },
+    "dialogA_Canap": {
+        "speaker":"sid","text": "Je dormirai sur le canapé"
+    },
+    "dialogA_Lit": {
+        "speaker":"sid", "text": "Le lit est grand t'inquiète" 
+    },
+    "dialogB": {
+        "speaker": "player",
+        "text": "Je te raccompagne chez toi? ",
+        "next": "dialogB_1"
+    },
+    "dialogB_1": {
+        "speaker":"sid",
+        "text":"Ca marche!"
+    },
+    "dialogC": {
+        "speaker": "narrateur",
+        "text": "Player laisse rentre sid chez elle seul"
+    }
+}
