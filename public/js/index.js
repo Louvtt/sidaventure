@@ -8,33 +8,10 @@ const app = new PIXI.Application({
 //Add the canvas that Pixi automatically created for you to the HTML document
 document.body.appendChild(app.view);
 
-// dialog without choices
-const d1 = new Dialog({
-    speaker: "player",
-    text: "blablablablabla",
-    next: new Dialog({
-        speaker: "pas player",
-        text: "blablablablabla blablablablabla",
-        next: new Dialog({
-            speaker: "player",
-            text: "alors oui",
-            choices: [
-                {text: "first", next: new Dialog({speaker: "player", text: "Premier"})},
-                {text: "second", next: new Dialog({speaker: "player", text: "Second"})}
-            ]
-        })
-    })
-});
-
-// dialog with choices
-const d2 = new Dialog({
-    speaker: "player",
-    text: "alors oui",
-    choices: [
-        {text: "first", next: new Dialog({speaker: "player", text: "Premier"})},
-        {text: "second", next: new Dialog({speaker: "player", text: "Second"})}
-    ]
-});
-
 const dialogManager = new DialogManager(app);
-dialogManager.setCurrent(d2);
+fetch("assets/dialogscene1.json")
+.then(async (res) => {
+    const dialogScene1 = parseJsonDialogs(await res.json());
+    console.log(dialogScene1);
+    dialogManager.setCurrent(dialogScene1);
+});
