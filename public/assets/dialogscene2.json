@@ -1,0 +1,90 @@
+{
+    "dialog1": {
+        "hasChoices": true,
+        "speaker": "player",
+        "text": "blablabla",
+        "next": "dialog2",
+        "choices": [
+            { "name": "choix1", "dialog": "dialog3" },
+            { "name": "choix2", "dialog": "dialog1" }
+        ]
+    }
+}
+{
+    "dialog2": {
+        "hasChoices": true,
+        "speaker": "player",
+        "text": "blablabla",
+        "next": "dialog2",
+        "choices": [
+            { "name": "choix1", "dialog": "dialog3" },
+            { "name": "choix2", "dialog": "dialog1" }
+        ]
+    }
+}{
+    "dialog3": {
+        "hasChoices": true,
+        "speaker": "player",
+        "text": "blablabla",
+        "next": "dialog2",
+        "choices": [
+            { "name": "choix1", "dialog": "dialog3" },
+            { "name": "choix2", "dialog": "dialog1" }
+        ]
+    }
+}{
+    "dialog4": {
+        "hasChoices": true,
+        "speaker": "player",
+        "text": "blablabla",
+        "next": "dialog2",
+        "choices": [
+            { "name": "choix1", "dialog": "dialog3" },
+            { "name": "choix2", "dialog": "dialog1" }
+        ]
+    }
+}{
+    "dialog5": {
+        "hasChoices": true,
+        "speaker": "player",
+        "text": "blablabla",
+        "next": "dialog2",
+        "choices": [
+            { "name": "choix1", "dialog": "dialog3" },
+            { "name": "choix2", "dialog": "dialog1" }
+        ]
+    }
+}{
+    "dialog6": {
+        "hasChoices": true,
+        "speaker": "player",
+        "text": "blablabla",
+        "next": "dialog2",
+        "choices": [
+            { "name": "choix1", "dialog": "dialog3" },
+            { "name": "choix2", "dialog": "dialog1" }
+        ]
+    }
+}{
+    "dialog7": {
+        "hasChoices": true,
+        "speaker": "player",
+        "text": "blablabla",
+        "next": "dialog2",
+        "choices": [
+            { "name": "choix1", "dialog": "dialog3" },
+            { "name": "choix2", "dialog": "dialog1" }
+        ]
+    }
+}{
+    "dialog8": {
+        "hasChoices": true,
+        "speaker": "player",
+        "text": "blablabla",
+        "next": "dialog2",
+        "choices": [
+            { "name": "choix1", "dialog": "dialog3" },
+            { "name": "choix2", "dialog": "dialog1" }
+        ]
+    }
+}
