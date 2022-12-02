@@ -14,7 +14,11 @@
 {
     " dialog2": {
         "speaker": "player",
-        "text": "blablabla",
+        "text": "brépond “Bof, il semblerait qu’on m’ait posé un lapin",
+        "speaker": "sid",
+        "text": "Je vais te chercher un truc à boire? Tu prends quoi?",
+        "speaker":"player",
+        "text":"Choisis pour moi",
         "next": "dialog2",
         "choices": [  
         ]
