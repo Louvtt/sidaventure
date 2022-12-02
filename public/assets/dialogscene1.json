@@ -18,36 +18,69 @@
         "speaker": "sid",
         "text": "Je vais te chercher un truc à boire? Tu prends quoi?",
         "speaker":"player",
-        "text":"Choisis pour moi",
+        "text":"il y a quoi a boire?",
         "next": "dialog3",
-        "choices": [  
-        ]
     }
 }{
     "dialog3": {
         "haschoice":true,
-        "speaker": "player",
-        "text": "blablabla",
-        "next": "dialog2",
+        "speaker": "sid",
+        "text": "t'as le choix entre un cocktail ou un jus de fruit",
+        //bouton a mettre 
         "choices": [
-            { "name": "whisky", "next": "dialog2" },
-            { "name": "cho", "next": "dialog3" }
+            { "name": "coktail", "next": "dialogcoktail" },
+            { "name": "cho", "next": "dialogjus" }
 
         ]
     }
-}{
-    "dialog4": {
+}
+{ 
+    "dialogcoktail": {
         "hasChoices": true,
-        "speaker": "player",
-        "text": "blablabla",
-        "next": "dialog2",
-        "choices": [
-            { "name": "choix1", "next": "dialog3" },
-            { "name": "choix2", "next": "dialog1" }
-        ]
+        "speaker":"narrateur",
+        "text":"Lui prendre un truc avec de l’alcool, 
+        ça désinhibe,
+         cette personne pourra peut etre parler plus facilement,
+          peut-être que vous allez finalement conclure quelque chose ce soir.",
+        "speaker": "sid",
+        "text": "Sex on the beach, le meilleur cocktail pour les âmes en peine",
+        "speaker":"player",
+        "text":"Hm, si tu le dis",
+        "speaker": "sid",
+        "text": "allez, raconte moi tout",
+        "next":"eclipse"}
+
+    }   
+    {
+        "eclipse": {
+            "haschoices":true,
+            "text":"Éclipse temporelle, on voit désormais la lune et des étoiles à la fenêtre.
+            le player a les joues roses, des bulles au dessus de la tête un peu pompette",
+            "speaker": "player",
+            "text": "“Pfiou, ça fait du bien de parler, merci c’est sympa”",
+            "next": "dialogA",
+        }
     }
-}{
-    "dialog5": {
+    {
+        "dialogA": {
+            "haschoice":true,
+            "speaker": "sid",
+            "text": "on vas chez moi? ",
+            "speaker":"player",
+            "text":"Okey, t'as un matelas de libre?"
+            "choices":[
+                { "name": "canapé", "next": "dialog4" },
+                { "name": "le lit est grand", "next": "dialog5" }
+    
+            ]
+        }
+    }
+
+
+
+
+{
+    "dialogjus": {
         "hasChoices": true,
         "speaker": "player",
         "text": "blablabla",
