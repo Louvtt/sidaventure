@@ -1,0 +1,89 @@
+{
+    "dialog debut": {
+        "hasChoices": true,
+        "speaker": "sid",
+        "text": "Salut, tu attends depuis longtemps",
+        "next": "dialog2",
+        "choices": [
+            { "name": "choixa", "next": "dialog2" },
+            { "name": "choixb", "next": "dialog3" }
+        ]
+    }
+}
+
+{
+    " dialog2": {
+        "speaker": "player",
+        "text": "blablabla",
+        "next": "dialog2",
+        "choices": [  
+        ]
+    }
+}{
+    "dialog3": {
+        "haschoice":true,
+        "speaker": "player",
+        "text": "blablabla",
+        "next": "dialog2",
+        "choices": [
+            { "name": "whisky", "next": "dialog2" },
+            { "name": "cho", "next": "dialog3" }
+
+        ]
+    }
+}{
+    "dialog4": {
+        "hasChoices": true,
+        "speaker": "player",
+        "text": "blablabla",
+        "next": "dialog2",
+        "choices": [
+            { "name": "choix1", "next": "dialog3" },
+            { "name": "choix2", "next": "dialog1" }
+        ]
+    }
+}{
+    "dialog5": {
+        "hasChoices": true,
+        "speaker": "player",
+        "text": "blablabla",
+        "next": "dialog2",
+        "choices": [
+            { "name": "choix1", "next": "dialog3" },
+            { "name": "choix2", "next": "dialog1" }
+        ]
+    }
+}{
+    "dialog6": {
+        "hasChoices": true,
+        "speaker": "player",
+        "text": "blablabla",
+        "next": "dialog2",
+        "choices": [
+            { "name": "choix1", "next": "dialog3" },
+            { "name": "choix2", "next": "dialog1" }
+        ]
+    }
+}{
+    "dialog7": {
+        "hasChoices": true,
+        "speaker": "player",
+        "text": "blablabla",
+        "next": "dialog2",
+        "choices": [
+            { "name": "choix1", "next": "dialog3" },
+            { "name": "choix2", "next": "dialog1" }
+        ]
+    }
+}{
+    "dialog8": {
+        "hasChoices": true,
+        "speaker": "player",
+        "text": "blablabla",
+        "next": "dialog2",
+        "choices": [
+            { "name": "choix1", "next": "dialog3" },
+            { "name": "choix2", "next": "dialog1" }
+        ]
+    }
+}
