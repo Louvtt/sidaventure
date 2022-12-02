@@ -1,6 +1,11 @@
 class Level {
-    constructor(dialogTree) {
-        this.dialogTree = dialogTree;
+    constructor(dialogFile) {
+        this.dialogTree = {};
+        fetch(dialogFile)
+        .then(async (res) => {
+            this.dialogTree = parseJsonDialogs(await res.json());
+            dialogManager.setCurrent(this.dialogTree);
+        });;
         this.container = new PIXI.Graphics();
 
         this._init();

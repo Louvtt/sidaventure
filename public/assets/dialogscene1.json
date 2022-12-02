@@ -2,12 +2,12 @@
     "root": "dialog_debut",
     "dialog_debut": {
         "speaker": "sid",
-        "text": "Salut, tu attends depuis longtemps",
+        "text": "Salut, tu attends depuis longtemps?",
         "next": "dialog2_0"
     },
     "dialog2_0": {
         "speaker": "player",
-        "text": "brépond “Bof, il semblerait qu’on m’ait posé un lapin",
+        "text": "“Bof, il semblerait qu’on m’ait posé un lapin“",
         "next": "dialog2_1"
     },
     "dialog2_1": {
@@ -17,12 +17,12 @@
     },
     "dialog2_2": {
         "speaker":"player",
-        "text":"il y a quoi a boire?",
+        "text":"Il y a quoi a boire?",
         "next": "dialog3"
     },
     "dialog3": {
         "speaker": "sid",
-        "text": "t'as le choix entre un cocktail ou un jus de fruit",
+        "text": "T'as le choix entre un cocktail ou un jus de fruit",
         "choices": [
             { "name": "coktail", "next": "dialogcoktail_0" },
             { "name": "cho", "next": "dialogjus_0" }
@@ -45,8 +45,8 @@
     },
     "dialogcoktail_3": {
         "speaker": "sid",
-        "text": "allez, raconte moi tout",
-        "next": "eclipse"
+        "text": "Allez, raconte moi tout",
+        "next": "eclipse_0"
     },
     "dialogjus_0": {
         "speaker":"narrateur",
@@ -55,22 +55,22 @@
     },
     "dialogjus_1": {
         "speaker": "player",
-        "text": "jus d'abricot, une petite pepite",
+        "text": "Jus d'abricot, une petite pepite",
         "next": "dialogjus_2"
     },
     "dialogjus_2": {
         "speaker":"sid",
-        "text":"merci c'est adorable",
+        "text":"Merci c'est adorable",
         "next": "dialogjus_3"
     },
     "dialogjus_3": {
         "speaker": "player",
-        "text": "alors, tu veux m'en parler??",
+        "text": "Alors, tu veux m'en parler??",
         "next":"eclipse2_0"
     },
     "eclipse_0": {
-        "text":"Éclipse temporelle, on voit désormais la lune et des étoiles à la fenêtre. le player a les joues roses, des bulles au dessus de la tête un peu pompette",
         "speaker": "player",
+        "text":"Éclipse temporelle, on voit désormais la lune et des étoiles à la fenêtre. le player a les joues roses, des bulles au dessus de la tête un peu pompette",
         "next": "eclipse_1"
     },
     "eclipse_1": {
@@ -83,13 +83,13 @@
         ]
     },
     "eclipse2_0": {
-        "text":"Éclipse temporelle, on voit désormais la lune et des étoiles à la fenêtre.",
         "speaker": "sid",
+        "text":"Éclipse temporelle, on voit désormais la lune et des étoiles à la fenêtre.",
         "next": "eclipse2_1"
     },
     "eclipse2_1": {
         "speaker": "sid",
-        "text": "“ ça fait du bien de parler, merci c’est sympa”",
+        "text": "“Ca fait du bien de parler, merci c’est sympa”",
         "choices":[
             { "name": "chez moi", "next": "dialogA" },
             { "name": "je te racompagne", "next": "dialogB" },
@@ -97,34 +97,40 @@
         ]
     },
     "dialogA": {
-        "haschoice":true,
         "speaker": "sid",
+        "text": "",
         "next": "dialogA_1"
     },
     "dialogA_1": {
         "speaker": "sid",
-        "text": "on vas chez moi? ",
+        "text": "On vas chez moi? ",
         "next": "dialogA_2"
     },
     "dialogA_2": {
         "speaker":"player",
         "text":"Okey, t'as un matelas de libre?",
         "choices":[
-            { "name": "canapé", "speaker":"sid","text": "Je dormirai sur le canapé" },
-            { "name": "le lit est grand","speaker":"sid", "text": "Le lit est grand t'inquiète" }
+            { "name": "canapé", "next": "dialogA_Canap"},
+            { "name": "le lit est grand", "next": "dialogA_Lit"}
         ]
+    },
+    "dialogA_Canap": {
+        "speaker":"sid","text": "Je dormirai sur le canapé"
+    },
+    "dialogA_Lit": {
+        "speaker":"sid", "text": "Le lit est grand t'inquiète" 
     },
     "dialogB": {
         "speaker": "player",
-        "text": "je te raccompagne chez toi? ",
+        "text": "Je te raccompagne chez toi? ",
         "next": "dialogB_1"
     },
     "dialogB_1": {
         "speaker":"sid",
-        "text":"ça marche!"
+        "text":"Ca marche!"
     },
     "dialogC": {
         "speaker": "narrateur",
-        "text": "player laisse rentre sid chez elle seul"
+        "text": "Player laisse rentre sid chez elle seul"
     }
 }

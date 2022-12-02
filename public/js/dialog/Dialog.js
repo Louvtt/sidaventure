@@ -1,6 +1,6 @@
 /** Dialog options */
 const DialogOpt = {
-    CharSpeed: 15, // ms
+    CharSpeed: 1, // ms
     Margin: .01, // %
     Height: .3, // %
     ChoiceHeight: 30, // px
