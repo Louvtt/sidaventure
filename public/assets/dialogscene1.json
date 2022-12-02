@@ -58,24 +58,56 @@
             le player a les joues roses, des bulles au dessus de la tête un peu pompette",
             "speaker": "player",
             "text": "“Pfiou, ça fait du bien de parler, merci c’est sympa”",
-            "next": "dialogA",
-        }
-    }
-    {
-        "dialogA": {
-            "haschoice":true,
-            "speaker": "sid",
-            "text": "on vas chez moi? ",
-            "speaker":"player",
-            "text":"Okey, t'as un matelas de libre?"
             "choices":[
-                { "name": "canapé", "next": "dialog4" },
-                { "name": "le lit est grand", "next": "dialog5" }
-    
+            { "name": "chez moi", "next": "dialogA" },
+            { "name": "je te racompagne", "next": "dialogB" },
+            { "name": "je te laisse rentre", "next": "dialogC" },
+
             ]
         }
     }
+            {
+                    "dialogA": {
+                        "haschoice":true,
+                        "speaker": "sid",
+                        "text": "on vas chez moi? ",
+                        "speaker":"player",
+                        "text":"Okey, t'as un matelas de libre?"
+                        "choices":[
+                            { "name": "canapé", "next": "dialog4" },
+                            { "name": "le lit est grand", "next": "dialog5" }
+                
+                        ]
+                    }
+            }
+            {
+                "dialogB": {
+                    "haschoice":true,
+                    "speaker": "sid",
+                    "text": "on vas chez moi? ",
+                    "speaker":"player",
+                    "text":"Okey, t'as un matelas de libre?"
+                    "choices":[
+                        { "name": "canapé", "next": "dialog4" },
+                        { "name": "le lit est grand", "next": "dialog5" }
 
+                    ]
+                }
+            }
+            {
+                "dialogC": {
+                    "haschoice":true,
+                    "speaker": "sid",
+                    "text": "on vas chez moi? ",
+                    "speaker":"player",
+                    "text":"Okey, t'as un matelas de libre?"
+                    "choices":[
+                        { "name": "canapé", "next": "dialog4" },
+                        { "name": "le lit est grand", "next": "dialog5" }
+
+                    ]
+                }
+            }
 
 
 
