@@ -1,8 +1,11 @@
 /** Dialog options */
 const DialogOpt = {
-    CharSpeed: 30,
-    Margin: .01,
-    Height: .3,
+    CharSpeed: 30, // ms
+    Margin: .01, // %
+    Height: .3, // %
+    ChoiceHeight: 30, // px
+
+    // Colors
 
     SpeakerColor: 0xFF00FF,
     BackgroundColor: 0x000000,
@@ -10,11 +13,14 @@ const DialogOpt = {
 }
 
 class Dialog {
-    constructor({speaker, text, next}={next: null}) {
+    constructor({speaker, text, next, choices}={next: null, choices: []}) {
         this.next = next;
         this.speaker = speaker;
         this.text = text;
+        this.choices = choices ?? [];
         this.onScreen = "";
+
+        this.animationTimeout = null;
 
         this.canGoToNext = false;
     }
@@ -33,7 +39,7 @@ class Dialog {
         this._draw(app);
 
         if(this.charIdx < this.text.length) {
-            setTimeout(() => { this._animate(app); }, DialogOpt.CharSpeed);
+            this.animationTimeout = setTimeout(() => { this._animate(app); }, DialogOpt.CharSpeed);
         } else {
             this.canGoToNext = true;
             this._draw(app);
@@ -41,11 +47,16 @@ class Dialog {
     }
 
     OnClick() {
-        if(this.canGoToNext) {
+        if(this.canGoToNext) { // go to next
             DialogManager.getInstance().setCurrent(this.next);
-        } else {
+        } else { // end animation
+            if(this.animationTimeout) {
+                clearTimeout(this.animationTimeout);
+            }
             this.onScreen = this.text;
             this.charIdx  = this.text.length - 2;
+            this.canGoToNext = true;
+            this._draw(app);
         }
     }
 
@@ -88,19 +99,49 @@ class Dialog {
         text.x = text.y = 80;
         container.addChild(text);
 
-        // next
         if(this.canGoToNext) {
-            const arrow = new PIXI.Text(
-                "v",
-                {
-                    fontSize: 20,
-                    fill: DialogOpt.InnerTextColor,
-                    wordWrap: true
+            // next arrow if no choices
+            if(this.choices.length == 0) {
+                const arrow = new PIXI.Text(
+                    "v",
+                    {
+                        fontSize: 20,
+                        fill: DialogOpt.InnerTextColor,
+                        wordWrap: true
+                    }
+                );
+                arrow.x = window.innerWidth * (1 - 2 * DialogOpt.Margin) - 20;
+                arrow.y = window.innerHeight * (DialogOpt.Height - 4 * DialogOpt.Margin);
+                container.addChild(arrow);
+            }
+            // choices
+            else {
+                // start from bottom
+                let optY = window.innerHeight * (DialogOpt.Height - 4 * DialogOpt.Margin);
+                for(let i = 0; i < this.choices.length; ++i) {
+                    const optData = this.choices[this.choices.length - i - 1];
+                    const optText = new PIXI.Text(
+                        " - " + (optData["text"] ?? i),
+                        {
+                            fontSize: 20,
+                            fill: DialogOpt.InnerTextColor,
+                            wordWrap: false
+                        }
+                    );
+                    optY -= DialogOpt.ChoiceHeight;
+                    optText.x = 20;
+                    optText.y = optY;
+
+                    optText.interactive = true;
+                    optText.on('click', (e) => {
+                        console.log("test", optData.text);
+                        DialogManager.getInstance().setCurrent(optData.next);
+                    });
+                    
+                    container.addChild(optText);
                 }
-            );
-            arrow.x = window.innerWidth * (1 - 2 * DialogOpt.Margin) - 20;
-            arrow.y = window.innerHeight * (DialogOpt.Height - 4 * DialogOpt.Margin);
-            container.addChild(arrow);
+            }
         }
+
     }
 }

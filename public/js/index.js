@@ -8,7 +8,8 @@ const app = new PIXI.Application({
 //Add the canvas that Pixi automatically created for you to the HTML document
 document.body.appendChild(app.view);
 
-const dialogs = new Dialog({
+// dialog without choices
+const d1 = new Dialog({
     speaker: "player",
     text: "blablablablabla",
     next: new Dialog({
@@ -16,9 +17,24 @@ const dialogs = new Dialog({
         text: "blablablablabla blablablablabla",
         next: new Dialog({
             speaker: "player",
-            text: "alors oui"
+            text: "alors oui",
+            choices: [
+                {text: "first", next: new Dialog({speaker: "player", text: "Premier"})},
+                {text: "second", next: new Dialog({speaker: "player", text: "Second"})}
+            ]
         })
     })
 });
+
+// dialog with choices
+const d2 = new Dialog({
+    speaker: "player",
+    text: "alors oui",
+    choices: [
+        {text: "first", next: new Dialog({speaker: "player", text: "Premier"})},
+        {text: "second", next: new Dialog({speaker: "player", text: "Second"})}
+    ]
+});
+
 const dialogManager = new DialogManager(app);
-dialogManager.setCurrent(dialogs);
+dialogManager.setCurrent(d2);

@@ -5,7 +5,7 @@ class DialogManager {
 
         DialogManager.instance = this;
         document.addEventListener("click", (e) => {
-            this.current.OnClick();
+            if(this.current) this.current.OnClick();
         });
     }
     
