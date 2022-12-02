@@ -40,8 +40,8 @@
         "speaker":"narrateur",
         "text":"Lui prendre un truc avec de l’alcool, 
         ça désinhibe,
-         cette personne pourra peut etre parler plus facilement,
-          peut-être que vous allez finalement conclure quelque chose ce soir.",
+         cette personne ne sera pas forcement consentente de se qui va suivre,
+          peut-être que vous allez conclure quelque chose ce soir.",
         "speaker": "sid",
         "text": "Sex on the beach, le meilleur cocktail pour les âmes en peine",
         "speaker":"player",
@@ -74,85 +74,61 @@
                         "speaker":"player",
                         "text":"Okey, t'as un matelas de libre?"
                         "choices":[
-                            { "name": "canapé", "next": "dialog4" },
-                            { "name": "le lit est grand", "next": "dialog5" }
+                            { "name": "canapé", "speaker":"sid","text": "Je dormirai sur le canapé" },
+                            { "name": "le lit est grand","speaker":"sid", "text": "Le lit est grand t'inquiète" }
                 
                         ]
                     }
             }
             {
                 "dialogB": {
-                    "haschoice":true,
-                    "speaker": "sid",
-                    "text": "on vas chez moi? ",
-                    "speaker":"player",
-                    "text":"Okey, t'as un matelas de libre?"
-                    "choices":[
-                        { "name": "canapé", "next": "dialog4" },
-                        { "name": "le lit est grand", "next": "dialog5" }
-
-                    ]
+                    "speaker": "player",
+                    "text": "je te raccompagne chez toi? ",
+                    "speaker":"sid",
+                    "text":"ça marche!"
+                    
                 }
             }
             {
                 "dialogC": {
-                    "haschoice":true,
-                    "speaker": "sid",
-                    "text": "on vas chez moi? ",
-                    "speaker":"player",
-                    "text":"Okey, t'as un matelas de libre?"
-                    "choices":[
-                        { "name": "canapé", "next": "dialog4" },
-                        { "name": "le lit est grand", "next": "dialog5" }
 
-                    ]
+                    "speaker": "narrateur",
+                    "text": "player laisse rentre sid chez elle seul",
+                    
+
                 }
             }
 
 
 
+
+                {"dialogjus": {
+                "hasChoices": true,
+                "speaker":"narrateur",
+                "text":"Lui prendre un jus de fruit, si cette personne veut parler elle le fera avec son plein consentement
+                et meme si vous n'aviez pas l'intention d'aller plus loin tout sera clair dans vos esprit",
+
+                "speaker": "player",
+                "text": "jus d'abricot, une petite pepite",
+                "speaker":"sid",
+                "text":"merci c'est adorable",
+                "speaker": "player",
+                "text": "alors, tu veux m'en parler??",
+                "next":"eclipse2"}
+
+            }   
 {
-    "dialogjus": {
-        "hasChoices": true,
-        "speaker": "player",
-        "text": "blablabla",
-        "next": "dialog2",
-        "choices": [
-            { "name": "choix1", "next": "dialog3" },
-            { "name": "choix2", "next": "dialog1" }
-        ]
-    }
-}{
-    "dialog6": {
-        "hasChoices": true,
-        "speaker": "player",
-        "text": "blablabla",
-        "next": "dialog2",
-        "choices": [
-            { "name": "choix1", "next": "dialog3" },
-            { "name": "choix2", "next": "dialog1" }
-        ]
-    }
-}{
-    "dialog7": {
-        "hasChoices": true,
-        "speaker": "player",
-        "text": "blablabla",
-        "next": "dialog2",
-        "choices": [
-            { "name": "choix1", "next": "dialog3" },
-            { "name": "choix2", "next": "dialog1" }
-        ]
-    }
-}{
-    "dialog8": {
-        "hasChoices": true,
-        "speaker": "player",
-        "text": "blablabla",
-        "next": "dialog2",
-        "choices": [
-            { "name": "choix1", "next": "dialog3" },
-            { "name": "choix2", "next": "dialog1" }
+    "eclipse2": {
+        "haschoices":true,
+        "text":"Éclipse temporelle, on voit désormais la lune et des étoiles à la fenêtre.",
+        "speaker": "sid",
+        "text": "“ ça fait du bien de parler, merci c’est sympa”",
+        "choices":[
+        { "name": "chez moi", "next": "dialogA" },
+        { "name": "je te racompagne", "next": "dialogB" },
+        { "name": "je te laisse rentre", "next": "dialog" },
+
         ]
     }
 }
+       
