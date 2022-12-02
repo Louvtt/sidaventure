@@ -10,81 +10,31 @@
         ]
     }
 }
-{
-    "dialog2": {
-        "hasChoices": true,
-        "speaker": "player",
-        "text": "blablabla",
-        "next": "dialog2",
-        "choices": [
-            { "name": "choix1", "dialog": "dialog3" },
-            { "name": "choix2", "dialog": "dialog1" }
-        ]
-    }
-}{
-    "dialog3": {
-        "hasChoices": true,
-        "speaker": "player",
-        "text": "blablabla",
-        "next": "dialog2",
-        "choices": [
-            { "name": "choix1", "dialog": "dialog3" },
-            { "name": "choix2", "dialog": "dialog1" }
-        ]
-    }
-}{
-    "dialog4": {
-        "hasChoices": true,
-        "speaker": "player",
-        "text": "blablabla",
-        "next": "dialog2",
-        "choices": [
-            { "name": "choix1", "dialog": "dialog3" },
-            { "name": "choix2", "dialog": "dialog1" }
-        ]
-    }
-}{
-    "dialog5": {
-        "hasChoices": true,
-        "speaker": "player",
-        "text": "blablabla",
-        "next": "dialog2",
-        "choices": [
-            { "name": "choix1", "dialog": "dialog3" },
-            { "name": "choix2", "dialog": "dialog1" }
-        ]
-    }
-}{
-    "dialog6": {
-        "hasChoices": true,
-        "speaker": "player",
-        "text": "blablabla",
-        "next": "dialog2",
-        "choices": [
-            { "name": "choix1", "dialog": "dialog3" },
-            { "name": "choix2", "dialog": "dialog1" }
-        ]
-    }
-}{
-    "dialog7": {
-        "hasChoices": true,
-        "speaker": "player",
-        "text": "blablabla",
-        "next": "dialog2",
-        "choices": [
-            { "name": "choix1", "dialog": "dialog3" },
-            { "name": "choix2", "dialog": "dialog1" }
-        ]
-    }
-}{
-    "dialog8": {
-        "hasChoices": true,
-        "speaker": "player",
-        "text": "blablabla",
-        "next": "dialog2",
-        "choices": [
-            { "name": "choix1", "dialog": "dialog3" },
-            { "name": "choix2", "dialog": "dialog1" }
-        ]
-    }
-}
+Perso1: allongé dans le lit
+Perso2:  Clique sur la personne allongée:
+A)S’allonger à côté : “hey comment tu te sens?” 
+	Perso1 joues rouges genre excited : “Plutôt bien”
+	Perso2: 
+            A1)aller chercher les préservatifs dans la SDB (périmés) “je reviens, je vais chercher de quoi se protéger”
+                “Mince, ils sont périmés….”
+                             a2)  On n’en mets pas, de toute façon elle prend la pillule
+                                    Renvoie au recap : pas bien de pas se protéger, même si on prend un contraceptif
+                            b2)“Boh, on fait avec”
+			
+                            c1)  Aller en chercher…
+	                Renvoie au recap: Les endroits où trouver des capotes gratos
+            b1)“C’est grave si on n’en mets pas?”
+                Perso1 : “Je suis plus trop sur.e d’avoir envie..”
+                Perso2: 
+                        a2)Déçu, mais c’est pas grave : “Pas de soucis, on peut faire autre chose!”
+                            Renvoie au recap: Bien: pas de sexe sans consentement
+                        b2)Déçu, on est bien là: “Vraiment? Ca fait une heure qu’on se chauffe quand même” 
+                            Renvoie au recap : On n’insiste pas quand la personne montre ne serait-ce qu’une hésitation! 
+b)S’allonger à côté et caresser son bras, la rassurer: “On va passer un bon moment”
+        Perso1 : “Je suis plus trop sur.e d’avoir envie..”
+        Perso2: 
+                a)Déçu, mais c’est pas grave : “Pas de soucis, on peut faire autre chose!”
+                    Renvoie au recap: Bien: pas de sexe sans consentement
+                b)Déçu, on est bien là: “Vraiment? Ca fait une heure qu’on se chauffe quand même” 
+                    Renvoie au recap : On n’insiste pas quand la personne montre ne serait-ce qu’une hésitation! 
+
