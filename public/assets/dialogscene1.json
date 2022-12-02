@@ -40,8 +40,8 @@
         "speaker":"narrateur",
         "text":"Lui prendre un truc avec de l’alcool, 
         ça désinhibe,
-         cette personne ne sera pas forcement consentente de se qui va suivre,
-          peut-être que vous allez conclure quelque chose ce soir.",
+        cette personne ne sera pas forcement consentente de se qui va suivre,
+        peut-être que vous allez conclure quelque chose ce soir.",
         "speaker": "sid",
         "text": "Sex on the beach, le meilleur cocktail pour les âmes en peine",
         "speaker":"player",
@@ -49,7 +49,22 @@
         "speaker": "sid",
         "text": "allez, raconte moi tout",
         "next":"eclipse"}
-
+        
+    }   
+    {"dialogjus": {
+    "hasChoices": true,
+    "speaker":"narrateur",
+    "text":"Lui prendre un jus de fruit, si cette personne veut parler elle le fera avec son plein consentement
+    et meme si vous n'aviez pas l'intention d'aller plus loin tout sera clair dans vos esprit",
+    
+    "speaker": "player",
+    "text": "jus d'abricot, une petite pepite",
+    "speaker":"sid",
+    "text":"merci c'est adorable",
+    "speaker": "player",
+    "text": "alors, tu veux m'en parler??",
+    "next":"eclipse2"}
+    
     }   
     {
         "eclipse": {
@@ -59,20 +74,35 @@
             "speaker": "player",
             "text": "“Pfiou, ça fait du bien de parler, merci c’est sympa”",
             "choices":[
-            { "name": "chez moi", "next": "dialogA" },
-            { "name": "je te racompagne", "next": "dialogB" },
-            { "name": "je te laisse rentre", "next": "dialogC" },
-
+                { "name": "chez moi", "next": "dialogA" },
+                { "name": "je te racompagne", "next": "dialogB" },
+                { "name": "je te laisse rentre", "next": "dialogC" },
+                
+        {
+                    "eclipse2": {
+                        "haschoices":true,
+                        "text":"Éclipse temporelle, on voit désormais la lune et des étoiles à la fenêtre.",
+                        "speaker": "sid",
+                        "text": "“ ça fait du bien de parler, merci c’est sympa”",
+                        "choices":[
+                        { "name": "chez moi", "next": "dialogA" },
+                        { "name": "je te racompagne", "next": "dialogB" },
+                        { "name": "je te laisse rentre", "next": "dialog" },
+                
+                        ]
+                    }
+                }
+                       
             ]
         }
     }
-            {
-                    "dialogA": {
-                        "haschoice":true,
-                        "speaker": "sid",
-                        "text": "on vas chez moi? ",
-                        "speaker":"player",
-                        "text":"Okey, t'as un matelas de libre?"
+    {
+        "dialogA": {
+            "haschoice":true,
+            "speaker": "sid",
+            "text": "on vas chez moi? ",
+            "speaker":"player",
+            "text":"Okey, t'as un matelas de libre?"
                         "choices":[
                             { "name": "canapé", "speaker":"sid","text": "Je dormirai sur le canapé" },
                             { "name": "le lit est grand","speaker":"sid", "text": "Le lit est grand t'inquiète" }
@@ -102,33 +132,3 @@
 
 
 
-                {"dialogjus": {
-                "hasChoices": true,
-                "speaker":"narrateur",
-                "text":"Lui prendre un jus de fruit, si cette personne veut parler elle le fera avec son plein consentement
-                et meme si vous n'aviez pas l'intention d'aller plus loin tout sera clair dans vos esprit",
-
-                "speaker": "player",
-                "text": "jus d'abricot, une petite pepite",
-                "speaker":"sid",
-                "text":"merci c'est adorable",
-                "speaker": "player",
-                "text": "alors, tu veux m'en parler??",
-                "next":"eclipse2"}
-
-            }   
-{
-    "eclipse2": {
-        "haschoices":true,
-        "text":"Éclipse temporelle, on voit désormais la lune et des étoiles à la fenêtre.",
-        "speaker": "sid",
-        "text": "“ ça fait du bien de parler, merci c’est sympa”",
-        "choices":[
-        { "name": "chez moi", "next": "dialogA" },
-        { "name": "je te racompagne", "next": "dialogB" },
-        { "name": "je te laisse rentre", "next": "dialog" },
-
-        ]
-    }
-}
-       
