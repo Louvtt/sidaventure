@@ -1,40 +1,115 @@
 {
-    "dialog1": {
-        "hasChoices": true,
-        "speaker": "player",
-        "text": "blablabla",
-        "next": "dialog2",
-        "choices": [
-            { "name": "choix1", "dialog": "dialog3" },
-            { "name": "choix2", "dialog": "dialog1" }
-        ]
-    }
-}
-Perso1: allongé dans le lit
-Perso2:  Clique sur la personne allongée:
-A)S’allonger à côté : “hey comment tu te sens?” 
-	Perso1 joues rouges genre excited : “Plutôt bien”
-	Perso2: 
-            A1)aller chercher les préservatifs dans la SDB (périmés) “je reviens, je vais chercher de quoi se protéger”
-                “Mince, ils sont périmés….”
-                             a2)  On n’en mets pas, de toute façon elle prend la pillule
-                                    Renvoie au recap : pas bien de pas se protéger, même si on prend un contraceptif
-                            b2)“Boh, on fait avec”
-			
-                            c1)  Aller en chercher…
-	                Renvoie au recap: Les endroits où trouver des capotes gratos
-            b1)“C’est grave si on n’en mets pas?”
-                Perso1 : “Je suis plus trop sur.e d’avoir envie..”
-                Perso2: 
-                        a2)Déçu, mais c’est pas grave : “Pas de soucis, on peut faire autre chose!”
-                            Renvoie au recap: Bien: pas de sexe sans consentement
-                        b2)Déçu, on est bien là: “Vraiment? Ca fait une heure qu’on se chauffe quand même” 
-                            Renvoie au recap : On n’insiste pas quand la personne montre ne serait-ce qu’une hésitation! 
-b)S’allonger à côté et caresser son bras, la rassurer: “On va passer un bon moment”
-        Perso1 : “Je suis plus trop sur.e d’avoir envie..”
-        Perso2: 
-                a)Déçu, mais c’est pas grave : “Pas de soucis, on peut faire autre chose!”
-                    Renvoie au recap: Bien: pas de sexe sans consentement
-                b)Déçu, on est bien là: “Vraiment? Ca fait une heure qu’on se chauffe quand même” 
-                    Renvoie au recap : On n’insiste pas quand la personne montre ne serait-ce qu’une hésitation! 
+    "dialogue intro":{
+    "speaker":"sid",
+    "text": "allongé dans le lit",
+    "next":"dialogue intro2"},
 
+    "dialogue intro2":{
+    "speaker":"player",
+    "action":" Clique sur la personne allongée",
+    "choices": [
+        { "name": "choix1", "dialog": "dialogA0" },
+        { "name": "choix2", "dialog": "dialogB0" }
+        ]},
+        
+        
+        "dialogue A0":{
+            
+            "action player":"S’allonger à côté",
+            "speaker":"player",
+    "text": "hey comment tu te sens?",
+    "next":"dialogue A01"},
+    
+    "dialogue B0":{
+
+                            "action player":"S’allonger à côté, carreser son bras, la rassurer",
+                            "speaker":"player",
+                            "text": "on va passer un bon moment",
+                            "next":"dialogue A20"},
+    "dialogue A01":{
+        "speaker":"sid",
+        "action sid": "joues rouges genre excited ",
+        "text":"Plutôt bien",
+        
+        "choiceplayer": [ 
+            { "name": "choix1", "next": "dialogA1" },
+            { "name": "choix2", "next": "dialogA2" }]},
+            
+            
+                                
+            "dialogue A1":{
+                "action player":"aller chercher les préservatifs dans la SDB (périmés)",
+                "speaker":" je reviens, je vais chercher de quoi se protéger,Mince, ils sont périmés….",
+                "choiceplayer": [ 
+                    { "name": "choix1", "next": "dialogA1a2" },
+                    { "name": "choix2", "next": "dialogA2b2" }]},            
+                    
+                    
+                    
+                    "dialogue A1a2":{
+                        "speaker":"player",
+                        "text":"  On n’en mets pas, de toute façon elle prend la pillule",
+                        "next":"dialogA1a20"},
+                        "dialogue A1a20":{
+                            "action retrun":"Renvoie au recap", 
+                            "text":" pas bien de pas se protéger, même si on prend un contraceptif"},
+            
+            "dialogue A1b2":{
+                "speaker":"player",
+                "text":"Boh, on fait avec","next":"dialogA1b20"},
+                
+                "dialogue A1b20":{
+                    "speaker":"narrateur",
+                    "text":"naration Aller en chercher…",
+                    "next":"dialogA1b21"},
+                    
+                    "dialogue A1b21":{
+                        "returnaction": "Renvoie au recap",
+                    "text":" Les endroits où trouver des capotes gratos"},
+                
+            "dialogue A2":{
+                "speaker":"player",
+                "text":"C’est grave si on n’en mets pas?",
+                "next":"dialogA20"},
+
+                "dialogue A20":{
+                    "speaker":"sid",
+                    "text" : "Je suis plus trop sur.e d’avoir envie..",
+                    "choiceplayer": [ 
+                                    { "name": "choix1", "next": "dialogA22" },
+                                     { "name": "choix2", "next": "dialogA2b2" }]
+                    },
+
+                        "dialogue A22":{
+                        "speaker":"narrateur",
+                        "text":"le player est Déçu, mais c’est pas grave",
+                        "next":"dialogA23"},
+                        
+                                    "dialogue A23":{ 
+                                    "speaker":"player",
+                                    "text":"Pas de soucis, on peut faire autre chose!",
+                                    "next":"dialogA24"},
+                                    
+                                    "dialogue A24":{
+                                    "return action":"Renvoie au recap",
+                                    "text":"Bien: pas de sexe sans consentement"},
+
+                        
+                    "dialogue A2b2":{
+                        "speaker":"narrateur",
+                        "text":"le player est Déçu, il trouve dommage de ne pas aller plus loin",
+                        "next":"dialogA23b"},
+                        
+                        
+                        "dialogA23b":{ 
+                                    "speaker":"player",
+                                    "text":"Vraiment? Ca fait une heure qu’on se chauffe quand même",
+                                    "next":"dialogA24b"},
+                           
+                        "dialogue A24b":{
+                            "return action":"Renvoie au recap",
+                            "text":"On n’insiste pas quand la personne montre ne serait-ce qu’une hésitation! pas de sexe sans consentement"}
+    
+        
+           
+}
